@@ -1,0 +1,66 @@
+---
+title: "1.Úloha"
+author: "BerikovaD"
+date: "16 10 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Úloha 1
+
+```{r}
+combin <- function(n,k)
+{
+  if (n<k)
+    return("Chyba, n má byť väčšie ako k")
+  else
+    return(factorial(n)/(factorial(n-k)*factorial(k)))
+}
+combin(4,1)
+combin(4,3)
+combin(1,2)
+```
+## Úloha 2
+
+
+```{r}
+odmocnina <-function(x)
+{
+a <- 2
+min <- 1e-10
+repeat
+  {
+  if (abs((a^2)-x)< min)
+     break
+  else a <- 0.5*((x/a)+a)
+  }
+return(a)
+}
+odmocnina(4)
+odmocnina(16)
+odmocnina(49)
+```
+## Úloha 3
+
+
+```{r}
+integ <- function(f, a, b)
+{f <- function(x){2*x+3*x^2}
+return(integrate(f, a, b))
+}
+integ(2*x+3*x^2,0,2)
+```
+## Úloha 4
+
+```{r}
+library(stringi)
+clear.dia <- function(s)
+  { 
+  return (stri_trans_general(s, "Latin-ASCII"))
+  }
+  
+  clear.dia("Príjemný slnečný víkend.")
+```
